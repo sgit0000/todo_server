@@ -1,10 +1,18 @@
 const express = require ('express')
 const router = express.Router()
+const taskServices = require('../services/task.services')
 
 
-router.get('/',(req,res)=>{
+router.get('/',async(req,res)=>{
+    
+    res.send( await taskServices.getAllTask())
 
 })
+router.post('/',(req,res)=>{
+    res.send("🤟")
+
+})
+
 
 module.exports = router
 // router.get('/',(req,res)=>{
